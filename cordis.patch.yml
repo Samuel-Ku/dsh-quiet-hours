@@ -1,0 +1,10 @@
+# dsh-quiet-hours bundle patch.
+#
+# One host entry that holds the `llm/stream` waterfall during configured pause
+# windows. No client half: while parked, the session simply shows a call that has
+# not started yet.
+#
+# Install: dsh plugin --profile <name> add <path to this directory>
+- insert:
+    - id: quiet-hours
+      name: dsh-quiet-hours

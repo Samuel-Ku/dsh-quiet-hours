@@ -1,0 +1,56 @@
+{
+  "name": "dsh-quiet-hours",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DSH plugin: hold every model call until a configured pause window ends, so work parks itself and resumes automatically.",
+  "license": "MIT",
+  "author": "Samuel-Ku",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "quiet-hours",
+    "pause",
+    "schedule",
+    "off-peak",
+    "cost-control"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuel-Ku/dsh-quiet-hours.git"
+  },
+  "homepage": "https://github.com/Samuel-Ku/dsh-quiet-hours",
+  "bugs": {
+    "url": "https://github.com/Samuel-Ku/dsh-quiet-hours/issues"
+  },
+  "scripts": {
+    "test": "node --test test/logic.test.mjs test/probe.test.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.1.5-rc.1": "compatible",
+        "0.1.5-rc.2": "compatible"
+      },
+      "node": ">=20"
+    }
+  }
+}
