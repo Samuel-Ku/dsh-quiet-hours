@@ -135,7 +135,7 @@ test('probe: inside a window the listener returns an AsyncIterable, NOT a promis
   const auditFile = auditPath();
   const ctx = await boot({ ...windowCoveringNow(), auditFile });
   const controller = new AbortController();
-  const result = drive(ctx, { provider: 'openrouter-jev', model: 'typesafe/jev-router', signal: controller.signal });
+  const result = drive(ctx, { provider: 'example-provider', model: 'example-model', signal: controller.signal });
 
   // The contract that matters: a thenable here would break every model call.
   assert.equal(typeof result.then, 'undefined', 'must not be a promise');
@@ -145,7 +145,7 @@ test('probe: inside a window the listener returns an AsyncIterable, NOT a promis
   // The pause is recorded as soon as the gate trips, before the call starts.
   const parked = await readAuditLines(auditFile);
   assert.equal(parked.at(-1).event, 'pause');
-  assert.equal(parked.at(-1).provider, 'openrouter-jev');
+  assert.equal(parked.at(-1).provider, 'example-provider');
   assert.ok(parked.at(-1).resumeAt > Date.now() - 60_000, 'resume instant is in the future');
 
   // Release it so the test does not sit on a parked timer.

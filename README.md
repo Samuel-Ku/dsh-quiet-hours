@@ -88,8 +88,8 @@ A **new** plugin module only mounts on a DSH restart; afterwards config edits re
 One JSONL line per park and per resume, at `auditFile`:
 
 ```json
-{"time":1790422374944,"event":"pause","resumeAt":1790433600000,"provider":"openrouter-jev","model":"typesafe/jev-router","pauseWindows":"mon,tue,wed,thu,fri 01:00-04:00 | mon,tue,wed,thu,fri 06:00-10:00 (UTC)"}
-{"time":1790433600012,"event":"resume","parkedMs":11225068,"provider":"openrouter-jev","model":"typesafe/jev-router"}
+{"time":1790422374944,"event":"pause","resumeAt":1790433600000,"provider":"example-provider","model":"example-model","pauseWindows":"mon,tue,wed,thu,fri 01:00-04:00 | mon,tue,wed,thu,fri 06:00-10:00 (UTC)"}
+{"time":1790433600012,"event":"resume","parkedMs":11225068,"provider":"example-provider","model":"example-model"}
 ```
 
 `event` is `pause`, then `resume` (with `parkedMs`) or `cancelled` when the turn was aborted while parked.
